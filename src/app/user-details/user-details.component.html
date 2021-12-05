@@ -1,0 +1,18 @@
+<label>User Name</label>
+<input type="text"
+    class="form-control"
+    [(ngModel)]="username"
+>
+<p>{{username}}</p>
+<button class="btn btn-primary" [disabled]="!username" (click)="clearUsername()"> 
+    Clear Username
+    </button>
+<!-- this is the component where if input is provided than only the button enables and if we click on button the text gets cleared -->
+
+<button class="btn btn-primary" (click)="addDetails()">
+    Add Details
+</button>
+<p *ngFor="let detai of details"
+[ngStyle]="{backgroundColor: detai=='online'?'green':'red', color:'white'}"
+
+>Server Status {{detai}}</p>
